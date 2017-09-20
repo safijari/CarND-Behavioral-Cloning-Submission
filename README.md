@@ -10,7 +10,7 @@ The goals / steps of this project are the following:
 ## Rubric Points
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
 #### 1. Project Files
 My project includes the following files:
@@ -35,6 +35,21 @@ The model.py file contains the code for training and saving the convolution neur
 #### 1. The NVIDIA Model
 
 My model is defined from lines 98 to 113. The first two layers preprocess the image (changing the range from 0-255 to -0.5 to 0.5, and cropping). Then I have four convoltuional layers, first two 5x5 and second two 3x3. All have stride of 2 and relu activation. I then flatten this, and stack five dense layers with 500, 100, 50, 10, and 1 output respectively. I intermix some dropout layers here to help fight overfitting.
+
+| Layer # | Type | Metadata                          |
+|---------|------|-----------------------------------|
+| 1       | Conv | 5x5, stride of 2, relu activation |
+| 2       | Conv | 5x5, stride of 2, relu activation |
+| 3       | Conv | 3x3, stride of 2, relu activation |
+| 4       | Conv | 3x3, stride of 2, relu activation |
+| 5       | Flatten | |
+| 6       | Dense | output size 500, relu |
+| 7       | Dropout | probability 0.5 |
+| 8       | Dense | output size 100, relu |
+| 9       | Dense | output size 50, relu |
+| 10      | Dense | output size 10, relu |
+| 10      | Dense | output size 1, no activation|
+
 
 #### 2. Attempts to reduce overfitting in the model
 
