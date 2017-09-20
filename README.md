@@ -56,7 +56,7 @@ Initially I used this model without the dropout layer which may have been the ca
 
 I added dropout, I also augmented the data with varying brightness to help fight overfitting.
 
-I actually did not create a validation set for this project. I feel the input data in many cases is not a good representation of how I want the model to actually behave (more on this later), so the validation loss, in my opinion, wouldn't have been very useful. Instead the true test of the model was just running it on the simulator, which I did after every epoch.
+I actually did not create a validation set for this project. I feel the input data in many cases is not a good representation of how I want the model to actually behave (more on this later), so the validation loss, in my opinion, wouldn't have been very useful. Instead the true test of the model was just running it on the simulator, which I did after every epoch. In 5 epoches the car learned to drive correctly.
 
 #### 3. Model parameter tuning
 
@@ -64,7 +64,7 @@ The model used an adam optimizer, so the learning rate was not tuned manually. I
 
 #### 4. Appropriate training data
 
-Really all I did was run the car forward 3 laps and backwards 3 laps, using the joystick. 
+Really all I did was run the car forward 3 laps and backwards 3 laps, using the joystick. In earlier tests I used the keyboard but I never could get a model to converge to something reasonable. Also, my earliest models also had issues with tighter turns, right hand turns, and getting confused near the end of the path where a (perfectly safe) dirt path exists.
 
 ### Model Architecture and Training Strategy
 
