@@ -50,6 +50,7 @@ My model is defined from lines 98 to 113. The first two layers preprocess the im
 | 10      | Dense | output size 10, relu |
 | 10      | Dense | output size 1, no activation|
 
+Initially I used this model without the dropout layer which may have been the cause of some of the initial issues where the car wanted to hug the side of the road. Dropout seemed to fix that issue. I also experimented some with convolutional layers with a smaller stride, but this made the model too complex and I actually started running into memory issues. Finally I tried removing a convolutional layer as well as reducing the number of connections in the dense layers but this caused the model to become too simplistic and unable to generalize to areas of the track with tight turns. Ultimately, I stuck with a model very reminicient of the NVIDIA model because, well, it works!
 
 #### 2. Attempts to reduce overfitting in the model
 
