@@ -66,6 +66,8 @@ The model used an adam optimizer, so the learning rate was not tuned manually. I
 
 Really all I did was run the car forward 3 laps and backwards 3 laps, using the joystick. In earlier tests I used the keyboard but I never could get a model to converge to something reasonable. Also, my earliest models also had issues with tighter turns, right hand turns, and getting confused near the end of the path where a (perfectly safe) dirt path exists.
 
+The three laps dataset I made had 10440 images with the car going forward, and 8196 images of the car driving the opposite direction on the track. This opposite direction dataset was important since I decided to not use the flipped image strategy because it wasn't working well for me. During training, I randomly shuffled this data, randomly discarded images with a low steering angle, augmented left/right images by changing their shifting their steering angles, and randomly modified the brightness of the image by taking it into the HSV space and multiplying the value of the V channel with a number between 0 and 1.
+
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
